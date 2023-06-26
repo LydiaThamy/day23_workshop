@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Total</title>
+</head>
+<body>
+    <div th:object="${order}">
+        <h1>Your order details:</h1>
+        <p>Order id: <span th:text="*{orderId}"></span></p>
+        <p>Order date: <span th:text="${#dates.format(order.orderDate, 'dd-MMM-yyyy')}"></span></p>
+        <p>Customer id: <span th:text="*{customerId}"></span></p>
+        <p>Total: $<span th:text="*{total}"></span></p>
+        <p>Cost price: $<span th:text="*{costPrice}"></span></p>
+    </div>
+</body>
+</html>
